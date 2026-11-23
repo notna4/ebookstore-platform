@@ -1,0 +1,46 @@
+{
+  "name": "bookworm-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Book Worm e-bookstore REST API (Express 5, PostgreSQL, OpenID Connect)",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "tsx --env-file-if-exists=.env.local watch src/server.ts",
+    "start": "tsx --env-file-if-exists=.env.local src/server.ts",
+    "idp": "tsx --env-file-if-exists=.env.local src/idp/server.ts",
+    "db:init": "tsx --env-file-if-exists=.env.local src/db-init.ts",
+    "db:dev": "tsx --env-file-if-exists=.env.local src/dev-db.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.5",
+    "helmet": "^8.3.0",
+    "jose": "^6.2.18",
+    "oidc-provider": "^9.15.1",
+    "pg": "^8.23.1",
+    "pino": "^10.4.0",
+    "pino-http": "^11.0.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.6.0",
+    "@electric-sql/pglite-socket": "^0.3.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "@types/oidc-provider": "^9.13.1",
+    "@types/pg": "^8.23.1",
+    "@types/supertest": "^7.2.1",
+    "supertest": "^7.3.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.1"
+  }
+}
